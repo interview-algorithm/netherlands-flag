@@ -61,6 +61,12 @@ describe('Netherlands Flag', function () {
             assert.deepEqual(sort(arr), expected);
         });
 
+        it('should throw error if not an array', function () {
+            assert.throws(function () {
+                sort({});
+            });
+        });
+
         it('should throw error if neither red/white nor blue', function () {
             assert.throws(function () {
                 sort([{}, {
